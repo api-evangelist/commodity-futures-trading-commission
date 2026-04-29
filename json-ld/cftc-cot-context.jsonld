@@ -1,0 +1,76 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "cftc": "https://publicreporting.cftc.gov/vocabulary#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "CotReport": {
+      "@id": "cftc:CommitmentsOfTradersReport",
+      "@context": {
+        "marketAndExchange": "cftc:marketAndExchangeNames",
+        "reportDate": {
+          "@id": "dcterms:date",
+          "@type": "xsd:date"
+        },
+        "contractMarketCode": "cftc:contractMarketCode",
+        "marketCode": "cftc:marketCode",
+        "regionCode": "cftc:regionCode",
+        "commodityCode": "cftc:commodityCode",
+        "openInterest": {
+          "@id": "cftc:openInterest",
+          "@type": "xsd:integer"
+        }
+      }
+    },
+
+    "LegacyCot": {
+      "@id": "cftc:LegacyCot",
+      "@context": {
+        "noncommercialLong": "cftc:noncommPositionsLongAll",
+        "noncommercialShort": "cftc:noncommPositionsShortAll",
+        "commercialLong": "cftc:commPositionsLongAll",
+        "commercialShort": "cftc:commPositionsShortAll",
+        "nonReportableLong": "cftc:nonreptPositionsLongAll",
+        "nonReportableShort": "cftc:nonreptPositionsShortAll"
+      }
+    },
+
+    "DisaggregatedCot": {
+      "@id": "cftc:DisaggregatedCot",
+      "@context": {
+        "producerMerchantLong": "cftc:prodMercPositionsLongAll",
+        "producerMerchantShort": "cftc:prodMercPositionsShortAll",
+        "swapDealerLong": "cftc:swapPositionsLongAll",
+        "swapDealerShort": "cftc:swapPositionsShortAll",
+        "managedMoneyLong": "cftc:mMoneyPositionsLongAll",
+        "managedMoneyShort": "cftc:mMoneyPositionsShortAll",
+        "otherReportableLong": "cftc:otherReptPositionsLong",
+        "otherReportableShort": "cftc:otherReptPositionsShort"
+      }
+    },
+
+    "TffCot": {
+      "@id": "cftc:TffCot",
+      "@context": {
+        "dealerLong": "cftc:dealerPositionsLongAll",
+        "dealerShort": "cftc:dealerPositionsShortAll",
+        "assetManagerLong": "cftc:assetMgrPositionsLong",
+        "assetManagerShort": "cftc:assetMgrPositionsShort",
+        "leveragedFundLong": "cftc:levMoneyPositionsLong",
+        "leveragedFundShort": "cftc:levMoneyPositionsShort",
+        "otherReportableLong": "cftc:otherReptPositionsLong",
+        "otherReportableShort": "cftc:otherReptPositionsShort"
+      }
+    },
+
+    "SupplementalCot": {
+      "@id": "cftc:SupplementalCot",
+      "@context": {
+        "commodityIndexTraderLong": "cftc:citPositionsLongAll",
+        "commodityIndexTraderShort": "cftc:citPositionsShortAll"
+      }
+    }
+  }
+}

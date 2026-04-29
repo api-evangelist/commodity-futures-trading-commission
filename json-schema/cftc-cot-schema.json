@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://publicreporting.cftc.gov/schemas/cot-row.json",
+  "title": "CFTC Commitments of Traders Row",
+  "description": "Common base schema for a row of CFTC Commitments of Traders data returned by the SODA endpoints at publicreporting.cftc.gov. Specific report formats add additional category breakdowns.",
+  "type": "object",
+  "properties": {
+    "market_and_exchange_names": {
+      "type": "string",
+      "description": "Combined market and exchange name as published by the CFTC."
+    },
+    "report_date_as_yyyy_mm_dd": {
+      "type": "string",
+      "format": "date",
+      "description": "Report Tuesday for the COT week."
+    },
+    "cftc_contract_market_code": {
+      "type": "string",
+      "description": "CFTC contract market code identifying the underlying contract."
+    },
+    "cftc_market_code": {
+      "type": "string",
+      "description": "CFTC market code."
+    },
+    "cftc_region_code": {
+      "type": "string",
+      "description": "CFTC region code."
+    },
+    "cftc_commodity_code": {
+      "type": "string",
+      "description": "CFTC commodity code (DCOT)."
+    },
+    "open_interest_all": {
+      "type": "string",
+      "description": "Total reportable plus non-reportable open interest in the contract."
+    }
+  },
+  "required": [
+    "market_and_exchange_names",
+    "report_date_as_yyyy_mm_dd",
+    "cftc_contract_market_code",
+    "open_interest_all"
+  ]
+}

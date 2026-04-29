@@ -1,0 +1,343 @@
+openapi: 3.0.3
+info:
+  title: CFTC Commitments of Traders (COT) SODA API
+  description: >-
+    OpenAPI description of the public Socrata Open Data API (SODA) endpoints
+    that the U.S. Commodity Futures Trading Commission exposes through its
+    Public Reporting Environment at publicreporting.cftc.gov. These datasets
+    publish weekly Commitments of Traders (COT) positions for futures and
+    futures plus options, in Legacy, Disaggregated, and Traders in Financial
+    Futures (TFF) report formats.
+  version: '1.0.0'
+  contact:
+    name: CFTC Public Reporting
+    url: https://publicreporting.cftc.gov/
+servers:
+  - url: https://publicreporting.cftc.gov/resource
+    description: CFTC Public Reporting Environment SODA endpoint
+tags:
+  - name: COT
+    description: Commitments of Traders datasets
+  - name: Legacy
+    description: Legacy COT report format
+  - name: Disaggregated
+    description: Disaggregated COT report format
+  - name: TFF
+    description: Traders in Financial Futures format
+  - name: Supplemental
+    description: Supplemental Commodity Index Trader format
+paths:
+  /6dca-aqww.json:
+    get:
+      operationId: getLegacyFuturesOnly
+      summary: Legacy Commitments of Traders (Futures Only)
+      description: Weekly Legacy COT report covering futures-only positions for reportable contracts.
+      tags:
+        - COT
+        - Legacy
+      parameters:
+        - $ref: '#/components/parameters/SocrataLimit'
+        - $ref: '#/components/parameters/SocrataOffset'
+        - $ref: '#/components/parameters/SocrataSelect'
+        - $ref: '#/components/parameters/SocrataWhere'
+        - $ref: '#/components/parameters/SocrataOrder'
+      responses:
+        '200':
+          description: An array of Legacy futures-only COT records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CotLegacyRow'
+  /jun7-fc8e.json:
+    get:
+      operationId: getLegacyCombined
+      summary: Legacy Commitments of Traders (Combined)
+      description: Weekly Legacy COT report covering combined futures and options positions.
+      tags:
+        - COT
+        - Legacy
+      parameters:
+        - $ref: '#/components/parameters/SocrataLimit'
+        - $ref: '#/components/parameters/SocrataOffset'
+        - $ref: '#/components/parameters/SocrataSelect'
+        - $ref: '#/components/parameters/SocrataWhere'
+        - $ref: '#/components/parameters/SocrataOrder'
+      responses:
+        '200':
+          description: An array of Legacy combined COT records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CotLegacyRow'
+  /72hh-3qpy.json:
+    get:
+      operationId: getDisaggregatedFuturesOnly
+      summary: Disaggregated Commitments of Traders (Futures Only)
+      description: Weekly Disaggregated COT report for futures-only positions.
+      tags:
+        - COT
+        - Disaggregated
+      parameters:
+        - $ref: '#/components/parameters/SocrataLimit'
+        - $ref: '#/components/parameters/SocrataOffset'
+        - $ref: '#/components/parameters/SocrataSelect'
+        - $ref: '#/components/parameters/SocrataWhere'
+        - $ref: '#/components/parameters/SocrataOrder'
+      responses:
+        '200':
+          description: An array of Disaggregated futures-only COT records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CotDisaggregatedRow'
+  /kh3c-gbw2.json:
+    get:
+      operationId: getDisaggregatedCombined
+      summary: Disaggregated Commitments of Traders (Combined)
+      description: Weekly Disaggregated COT report for combined futures and options positions.
+      tags:
+        - COT
+        - Disaggregated
+      parameters:
+        - $ref: '#/components/parameters/SocrataLimit'
+        - $ref: '#/components/parameters/SocrataOffset'
+        - $ref: '#/components/parameters/SocrataSelect'
+        - $ref: '#/components/parameters/SocrataWhere'
+        - $ref: '#/components/parameters/SocrataOrder'
+      responses:
+        '200':
+          description: An array of Disaggregated combined COT records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CotDisaggregatedRow'
+  /gpe5-46if.json:
+    get:
+      operationId: getTffFuturesOnly
+      summary: Traders in Financial Futures (Futures Only)
+      description: Weekly TFF COT report covering futures-only positions for financial futures.
+      tags:
+        - COT
+        - TFF
+      parameters:
+        - $ref: '#/components/parameters/SocrataLimit'
+        - $ref: '#/components/parameters/SocrataOffset'
+        - $ref: '#/components/parameters/SocrataSelect'
+        - $ref: '#/components/parameters/SocrataWhere'
+        - $ref: '#/components/parameters/SocrataOrder'
+      responses:
+        '200':
+          description: An array of TFF futures-only COT records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CotTffRow'
+  /yw9f-hn96.json:
+    get:
+      operationId: getTffCombined
+      summary: Traders in Financial Futures (Combined)
+      description: Weekly TFF COT report covering combined futures and options positions for financial futures.
+      tags:
+        - COT
+        - TFF
+      parameters:
+        - $ref: '#/components/parameters/SocrataLimit'
+        - $ref: '#/components/parameters/SocrataOffset'
+        - $ref: '#/components/parameters/SocrataSelect'
+        - $ref: '#/components/parameters/SocrataWhere'
+        - $ref: '#/components/parameters/SocrataOrder'
+      responses:
+        '200':
+          description: An array of TFF combined COT records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CotTffRow'
+  /4zgm-a668.json:
+    get:
+      operationId: getSupplementalCit
+      summary: Supplemental Commodity Index Trader Report
+      description: Weekly supplemental COT report focused on Commodity Index Trader positions in selected agricultural markets.
+      tags:
+        - COT
+        - Supplemental
+      parameters:
+        - $ref: '#/components/parameters/SocrataLimit'
+        - $ref: '#/components/parameters/SocrataOffset'
+        - $ref: '#/components/parameters/SocrataSelect'
+        - $ref: '#/components/parameters/SocrataWhere'
+        - $ref: '#/components/parameters/SocrataOrder'
+      responses:
+        '200':
+          description: An array of Supplemental Commodity Index Trader records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CotSupplementalRow'
+components:
+  parameters:
+    SocrataLimit:
+      name: $limit
+      in: query
+      description: Maximum number of rows to return (Socrata default 1000, max 50000)
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50000
+        default: 1000
+    SocrataOffset:
+      name: $offset
+      in: query
+      description: Number of rows to skip for paging
+      schema:
+        type: integer
+        minimum: 0
+    SocrataSelect:
+      name: $select
+      in: query
+      description: SoQL select clause specifying which columns to return
+      schema:
+        type: string
+    SocrataWhere:
+      name: $where
+      in: query
+      description: SoQL where clause for filtering rows
+      schema:
+        type: string
+    SocrataOrder:
+      name: $order
+      in: query
+      description: SoQL order by clause
+      schema:
+        type: string
+  schemas:
+    CotLegacyRow:
+      type: object
+      properties:
+        market_and_exchange_names:
+          type: string
+        report_date_as_yyyy_mm_dd:
+          type: string
+          format: date
+        cftc_contract_market_code:
+          type: string
+        cftc_market_code:
+          type: string
+        cftc_region_code:
+          type: string
+        cftc_commodity_code:
+          type: string
+        open_interest_all:
+          type: string
+        noncomm_positions_long_all:
+          type: string
+        noncomm_positions_short_all:
+          type: string
+        comm_positions_long_all:
+          type: string
+        comm_positions_short_all:
+          type: string
+        nonrept_positions_long_all:
+          type: string
+        nonrept_positions_short_all:
+          type: string
+    CotDisaggregatedRow:
+      type: object
+      properties:
+        market_and_exchange_names:
+          type: string
+        report_date_as_yyyy_mm_dd:
+          type: string
+          format: date
+        cftc_contract_market_code:
+          type: string
+        cftc_commodity_code:
+          type: string
+        open_interest_all:
+          type: string
+        prod_merc_positions_long_all:
+          type: string
+        prod_merc_positions_short_all:
+          type: string
+        swap_positions_long_all:
+          type: string
+        swap__positions_short_all:
+          type: string
+        m_money_positions_long_all:
+          type: string
+        m_money_positions_short_all:
+          type: string
+        other_rept_positions_long:
+          type: string
+        other_rept_positions_short:
+          type: string
+    CotTffRow:
+      type: object
+      properties:
+        market_and_exchange_names:
+          type: string
+        report_date_as_yyyy_mm_dd:
+          type: string
+          format: date
+        cftc_contract_market_code:
+          type: string
+        cftc_commodity_code:
+          type: string
+        open_interest_all:
+          type: string
+        dealer_positions_long_all:
+          type: string
+        dealer_positions_short_all:
+          type: string
+        asset_mgr_positions_long:
+          type: string
+        asset_mgr_positions_short:
+          type: string
+        lev_money_positions_long:
+          type: string
+        lev_money_positions_short:
+          type: string
+        other_rept_positions_long:
+          type: string
+        other_rept_positions_short:
+          type: string
+    CotSupplementalRow:
+      type: object
+      properties:
+        market_and_exchange_names:
+          type: string
+        report_date_as_yyyy_mm_dd:
+          type: string
+          format: date
+        cftc_contract_market_code:
+          type: string
+        cftc_commodity_code:
+          type: string
+        open_interest_all:
+          type: string
+        comm_positions_long_all:
+          type: string
+        comm_positions_short_all:
+          type: string
+        noncomm_positions_long_all:
+          type: string
+        noncomm_positions_short_all:
+          type: string
+        cit_positions_long_all:
+          type: string
+        cit_positions_short_all:
+          type: string

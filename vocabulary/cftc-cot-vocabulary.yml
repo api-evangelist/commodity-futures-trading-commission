@@ -1,0 +1,58 @@
+aid: commodity-futures-trading-commission:vocabulary
+name: CFTC Commitments of Traders Vocabulary
+description: >-
+  Shared vocabulary for the U.S. Commodity Futures Trading Commission's
+  Commitments of Traders (COT) public reporting. The COT report is published
+  weekly and breaks down open interest in major futures markets by trader
+  category. Three primary report formats are produced (Legacy, Disaggregated,
+  Traders in Financial Futures) along with a Supplemental Commodity Index
+  Trader report for selected agricultural markets.
+namespace: https://publicreporting.cftc.gov/vocabulary#
+terms:
+  - term: CommitmentsOfTradersReport
+    definition: >-
+      The weekly aggregate report of open interest positions by trader
+      category for futures and combined futures-and-options contracts.
+    sameAs: https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
+  - term: LegacyCot
+    definition: >-
+      Original COT report format that splits reportable positions into
+      Commercial and Non-Commercial categories, plus Non-Reportable.
+  - term: DisaggregatedCot
+    definition: >-
+      Modernized COT format introduced in 2009 that splits reportable traders
+      into Producer/Merchant/Processor/User, Swap Dealers, Managed Money, and
+      Other Reportables.
+  - term: TradersInFinancialFutures
+    definition: >-
+      COT report format for financial futures markets that splits reportable
+      traders into Dealer, Asset Manager, Leveraged Funds, and Other.
+  - term: SupplementalCot
+    definition: >-
+      Supplemental report covering selected agricultural markets that adds a
+      Commodity Index Trader category to the basic COT breakdown.
+  - term: ContractMarketCode
+    definition: >-
+      CFTC-assigned identifier for an underlying futures contract on a
+      specific exchange.
+  - term: OpenInterest
+    definition: >-
+      The total number of contracts outstanding for the underlying market on
+      the report date.
+  - term: ReportableTrader
+    definition: >-
+      A trader whose position equals or exceeds the CFTC-defined reporting
+      level for the contract and is therefore disclosed in COT category
+      breakdowns.
+  - term: NonReportableTrader
+    definition: >-
+      A trader whose position is below the reporting level. Their positions
+      are aggregated and shown only as totals.
+  - term: SocrataResource
+    definition: >-
+      A dataset on the publicreporting.cftc.gov SODA platform identified by
+      a Socrata four-by-four code such as 6dca-aqww.
+    sameAs: https://dev.socrata.com/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

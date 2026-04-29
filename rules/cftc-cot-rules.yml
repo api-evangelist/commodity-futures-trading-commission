@@ -1,0 +1,57 @@
+extends:
+  - "spectral:oas"
+documentationUrl: https://publicreporting.cftc.gov/
+rules:
+  cftc-cot-info-title:
+    description: COT OpenAPI info.title must reference Commitments of Traders or CFTC
+    severity: error
+    given: "$.info.title"
+    then:
+      function: pattern
+      functionOptions:
+        match: "(?i)(CFTC|Commitments\\s+of\\s+Traders)"
+  cftc-cot-server-defined:
+    description: At least one server URL must be defined for the SODA endpoint
+    severity: error
+    given: "$.servers"
+    then:
+      function: length
+      functionOptions:
+        min: 1
+  cftc-cot-server-publicreporting:
+    description: Server URL must point to publicreporting.cftc.gov
+    severity: error
+    given: "$.servers[*].url"
+    then:
+      function: pattern
+      functionOptions:
+        match: "publicreporting\\.cftc\\.gov"
+  cftc-cot-tag-required:
+    description: COT-related tags must be declared at the document level
+    severity: warn
+    given: "$.tags[*].name"
+    then:
+      function: enumeration
+      functionOptions:
+        values:
+          - COT
+          - Legacy
+          - Disaggregated
+          - TFF
+          - Supplemental
+  cftc-cot-operation-id-camelcase:
+    description: Every operation must define an operationId using camelCase
+    severity: error
+    given: "$.paths.*[get,put,post,delete,patch].operationId"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]+$"
+  cftc-cot-soda-resource-path:
+    description: COT paths should resolve to a Socrata four-by-four .json resource path
+    severity: warn
+    given: "$.paths"
+    then:
+      function: pattern
+      functionOptions:
+        match: "/[a-z0-9]{4}-[a-z0-9]{4}\\.json"

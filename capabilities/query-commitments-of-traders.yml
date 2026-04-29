@@ -1,0 +1,41 @@
+aid: commodity-futures-trading-commission:capability:query-commitments-of-traders
+name: Query Commitments of Traders Data
+description: >-
+  Workflow for retrieving weekly Commitments of Traders (COT) data from the
+  CFTC Public Reporting Environment. Lists Legacy, Disaggregated, and TFF
+  rows for a chosen contract market and report week, applying SoQL filters
+  through the standard Socrata Open Data API parameters. Useful for analysts
+  and quant researchers building positioning dashboards over CFTC data.
+api: commodity-futures-trading-commission:cftc-cot-api
+openapi: openapi/cftc-cot-openapi.yml
+tags:
+  - COT
+  - CFTC
+  - Open Data
+  - Positioning
+  - SODA
+operations:
+  - operationId: getLegacyFuturesOnly
+    method: GET
+    path: /6dca-aqww.json
+    purpose: Pull Legacy futures-only positions for the latest report week
+  - operationId: getDisaggregatedFuturesOnly
+    method: GET
+    path: /72hh-3qpy.json
+    purpose: Pull Disaggregated futures-only positions for trader category breakdown
+  - operationId: getTffFuturesOnly
+    method: GET
+    path: /gpe5-46if.json
+    purpose: Pull Traders in Financial Futures positions for financial markets
+  - operationId: getSupplementalCit
+    method: GET
+    path: /4zgm-a668.json
+    purpose: Pull Supplemental Commodity Index Trader positions for selected agricultural markets
+useCases:
+  - Build a weekly positioning dashboard for a specific commodity market
+  - Compute net non-commercial exposure as a proxy for speculator sentiment
+  - Cross-reference COT trader categories with market price moves
+  - Produce historical time series of trader category positions for backtests
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
