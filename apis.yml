@@ -2,7 +2,7 @@ aid: commodity-futures-trading-commission
 url: >-
   https://raw.githubusercontent.com/api-evangelist/commodity-futures-trading-commission/refs/heads/main/apis.yml
 name: Commodity Futures Trading Commission
-x-type: government
+kind: government
 description: >-
   The Commodity Futures Trading Commission (CFTC) is the U.S. federal regulator
   for commodity futures and options markets. The CFTC publishes the weekly
@@ -116,7 +116,7 @@ apis:
 common:
   - type: Website
     url: https://www.cftc.gov/
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/cftc-cot-context.jsonld
   - type: JSONSchema
     url: json-schema/cftc-cot-schema.json
@@ -130,7 +130,7 @@ common:
     url: https://publicreporting.cftc.gov/
   - type: Reference
     url: https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.cftc.gov/About/AbouttheCFTC/Privacy.html
 maintainers:
   - FN: Kin Lane
