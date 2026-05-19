@@ -1,0 +1,101 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CFTC Commitments of Traders (COT) SODA API — Disaggregated
+  description: 'CFTC Commitments of Traders (COT) SODA API — Disaggregated. 2 operations. Lead operation: Disaggregated Commitments
+    of Traders (Futures Only). Self-contained Naftiko capability covering one Commodity Futures Trading Commission business
+    surface.'
+  tags:
+  - Commodity Futures Trading Commission
+  - Disaggregated
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    COMMODITY_FUTURES_TRADING_COMMISSION_API_KEY: COMMODITY_FUTURES_TRADING_COMMISSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cftc-cot-disaggregated
+    baseUri: https://publicreporting.cftc.gov/resource
+    description: CFTC Commitments of Traders (COT) SODA API — Disaggregated business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: 72hh-3qpy.json
+      path: /72hh-3qpy.json
+      operations:
+      - name: getdisaggregatedfuturesonly
+        method: GET
+        description: Disaggregated Commitments of Traders (Futures Only)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: kh3c-gbw2.json
+      path: /kh3c-gbw2.json
+      operations:
+      - name: getdisaggregatedcombined
+        method: GET
+        description: Disaggregated Commitments of Traders (Combined)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: cftc-cot-disaggregated-rest
+    port: 8080
+    description: REST adapter for CFTC Commitments of Traders (COT) SODA API — Disaggregated. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/72hh-3qpy-json
+      name: 72hh-3qpy-json
+      description: REST surface for 72hh-3qpy.json.
+      operations:
+      - method: GET
+        name: getdisaggregatedfuturesonly
+        description: Disaggregated Commitments of Traders (Futures Only)
+        call: cftc-cot-disaggregated.getdisaggregatedfuturesonly
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/kh3c-gbw2-json
+      name: kh3c-gbw2-json
+      description: REST surface for kh3c-gbw2.json.
+      operations:
+      - method: GET
+        name: getdisaggregatedcombined
+        description: Disaggregated Commitments of Traders (Combined)
+        call: cftc-cot-disaggregated.getdisaggregatedcombined
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cftc-cot-disaggregated-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CFTC Commitments of Traders (COT) SODA API — Disaggregated. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: disaggregated-commitments-traders-futures-only
+      description: Disaggregated Commitments of Traders (Futures Only)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cftc-cot-disaggregated.getdisaggregatedfuturesonly
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disaggregated-commitments-traders-combined
+      description: Disaggregated Commitments of Traders (Combined)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cftc-cot-disaggregated.getdisaggregatedcombined
+      outputParameters:
+      - type: object
+        mapping: $.

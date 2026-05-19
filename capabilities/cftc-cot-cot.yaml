@@ -1,0 +1,259 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CFTC Commitments of Traders (COT) SODA API — COT
+  description: 'CFTC Commitments of Traders (COT) SODA API — COT. 7 operations. Lead operation: Supplemental Commodity Index
+    Trader Report. Self-contained Naftiko capability covering one Commodity Futures Trading Commission business surface.'
+  tags:
+  - Commodity Futures Trading Commission
+  - COT
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    COMMODITY_FUTURES_TRADING_COMMISSION_API_KEY: COMMODITY_FUTURES_TRADING_COMMISSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cftc-cot-cot
+    baseUri: https://publicreporting.cftc.gov/resource
+    description: CFTC Commitments of Traders (COT) SODA API — COT business capability. Self-contained, no shared references.
+    resources:
+    - name: 4zgm-a668.json
+      path: /4zgm-a668.json
+      operations:
+      - name: getsupplementalcit
+        method: GET
+        description: Supplemental Commodity Index Trader Report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 6dca-aqww.json
+      path: /6dca-aqww.json
+      operations:
+      - name: getlegacyfuturesonly
+        method: GET
+        description: Legacy Commitments of Traders (Futures Only)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: 72hh-3qpy.json
+      path: /72hh-3qpy.json
+      operations:
+      - name: getdisaggregatedfuturesonly
+        method: GET
+        description: Disaggregated Commitments of Traders (Futures Only)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: gpe5-46if.json
+      path: /gpe5-46if.json
+      operations:
+      - name: gettfffuturesonly
+        method: GET
+        description: Traders in Financial Futures (Futures Only)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: jun7-fc8e.json
+      path: /jun7-fc8e.json
+      operations:
+      - name: getlegacycombined
+        method: GET
+        description: Legacy Commitments of Traders (Combined)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: kh3c-gbw2.json
+      path: /kh3c-gbw2.json
+      operations:
+      - name: getdisaggregatedcombined
+        method: GET
+        description: Disaggregated Commitments of Traders (Combined)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: yw9f-hn96.json
+      path: /yw9f-hn96.json
+      operations:
+      - name: gettffcombined
+        method: GET
+        description: Traders in Financial Futures (Combined)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: cftc-cot-cot-rest
+    port: 8080
+    description: REST adapter for CFTC Commitments of Traders (COT) SODA API — COT. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/4zgm-a668-json
+      name: 4zgm-a668-json
+      description: REST surface for 4zgm-a668.json.
+      operations:
+      - method: GET
+        name: getsupplementalcit
+        description: Supplemental Commodity Index Trader Report
+        call: cftc-cot-cot.getsupplementalcit
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/6dca-aqww-json
+      name: 6dca-aqww-json
+      description: REST surface for 6dca-aqww.json.
+      operations:
+      - method: GET
+        name: getlegacyfuturesonly
+        description: Legacy Commitments of Traders (Futures Only)
+        call: cftc-cot-cot.getlegacyfuturesonly
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/72hh-3qpy-json
+      name: 72hh-3qpy-json
+      description: REST surface for 72hh-3qpy.json.
+      operations:
+      - method: GET
+        name: getdisaggregatedfuturesonly
+        description: Disaggregated Commitments of Traders (Futures Only)
+        call: cftc-cot-cot.getdisaggregatedfuturesonly
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/gpe5-46if-json
+      name: gpe5-46if-json
+      description: REST surface for gpe5-46if.json.
+      operations:
+      - method: GET
+        name: gettfffuturesonly
+        description: Traders in Financial Futures (Futures Only)
+        call: cftc-cot-cot.gettfffuturesonly
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/jun7-fc8e-json
+      name: jun7-fc8e-json
+      description: REST surface for jun7-fc8e.json.
+      operations:
+      - method: GET
+        name: getlegacycombined
+        description: Legacy Commitments of Traders (Combined)
+        call: cftc-cot-cot.getlegacycombined
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/kh3c-gbw2-json
+      name: kh3c-gbw2-json
+      description: REST surface for kh3c-gbw2.json.
+      operations:
+      - method: GET
+        name: getdisaggregatedcombined
+        description: Disaggregated Commitments of Traders (Combined)
+        call: cftc-cot-cot.getdisaggregatedcombined
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/yw9f-hn96-json
+      name: yw9f-hn96-json
+      description: REST surface for yw9f-hn96.json.
+      operations:
+      - method: GET
+        name: gettffcombined
+        description: Traders in Financial Futures (Combined)
+        call: cftc-cot-cot.gettffcombined
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cftc-cot-cot-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CFTC Commitments of Traders (COT) SODA API — COT. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: supplemental-commodity-index-trader-report
+      description: Supplemental Commodity Index Trader Report
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cftc-cot-cot.getsupplementalcit
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: legacy-commitments-traders-futures-only
+      description: Legacy Commitments of Traders (Futures Only)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cftc-cot-cot.getlegacyfuturesonly
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disaggregated-commitments-traders-futures-only
+      description: Disaggregated Commitments of Traders (Futures Only)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cftc-cot-cot.getdisaggregatedfuturesonly
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: traders-financial-futures-futures-only
+      description: Traders in Financial Futures (Futures Only)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cftc-cot-cot.gettfffuturesonly
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: legacy-commitments-traders-combined
+      description: Legacy Commitments of Traders (Combined)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cftc-cot-cot.getlegacycombined
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disaggregated-commitments-traders-combined
+      description: Disaggregated Commitments of Traders (Combined)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cftc-cot-cot.getdisaggregatedcombined
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: traders-financial-futures-combined
+      description: Traders in Financial Futures (Combined)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cftc-cot-cot.gettffcombined
+      outputParameters:
+      - type: object
+        mapping: $.
