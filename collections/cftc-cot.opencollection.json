@@ -1,0 +1,319 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFTC Commitments of Traders (COT) SODA API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "COT",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Legacy Commitments of Traders (Futures Only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://publicreporting.cftc.gov/resource/6dca-aqww.json",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+              },
+              {
+                "name": "$offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of rows to skip for paging"
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "SoQL select clause specifying which columns to return"
+              },
+              {
+                "name": "$where",
+                "value": "",
+                "type": "query",
+                "description": "SoQL where clause for filtering rows"
+              },
+              {
+                "name": "$order",
+                "value": "",
+                "type": "query",
+                "description": "SoQL order by clause"
+              }
+            ]
+          },
+          "docs": "Weekly Legacy COT report covering futures-only positions for reportable contracts."
+        },
+        {
+          "info": {
+            "name": "Legacy Commitments of Traders (Combined)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://publicreporting.cftc.gov/resource/jun7-fc8e.json",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+              },
+              {
+                "name": "$offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of rows to skip for paging"
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "SoQL select clause specifying which columns to return"
+              },
+              {
+                "name": "$where",
+                "value": "",
+                "type": "query",
+                "description": "SoQL where clause for filtering rows"
+              },
+              {
+                "name": "$order",
+                "value": "",
+                "type": "query",
+                "description": "SoQL order by clause"
+              }
+            ]
+          },
+          "docs": "Weekly Legacy COT report covering combined futures and options positions."
+        },
+        {
+          "info": {
+            "name": "Disaggregated Commitments of Traders (Futures Only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://publicreporting.cftc.gov/resource/72hh-3qpy.json",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+              },
+              {
+                "name": "$offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of rows to skip for paging"
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "SoQL select clause specifying which columns to return"
+              },
+              {
+                "name": "$where",
+                "value": "",
+                "type": "query",
+                "description": "SoQL where clause for filtering rows"
+              },
+              {
+                "name": "$order",
+                "value": "",
+                "type": "query",
+                "description": "SoQL order by clause"
+              }
+            ]
+          },
+          "docs": "Weekly Disaggregated COT report for futures-only positions."
+        },
+        {
+          "info": {
+            "name": "Disaggregated Commitments of Traders (Combined)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://publicreporting.cftc.gov/resource/kh3c-gbw2.json",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+              },
+              {
+                "name": "$offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of rows to skip for paging"
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "SoQL select clause specifying which columns to return"
+              },
+              {
+                "name": "$where",
+                "value": "",
+                "type": "query",
+                "description": "SoQL where clause for filtering rows"
+              },
+              {
+                "name": "$order",
+                "value": "",
+                "type": "query",
+                "description": "SoQL order by clause"
+              }
+            ]
+          },
+          "docs": "Weekly Disaggregated COT report for combined futures and options positions."
+        },
+        {
+          "info": {
+            "name": "Traders in Financial Futures (Futures Only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+              },
+              {
+                "name": "$offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of rows to skip for paging"
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "SoQL select clause specifying which columns to return"
+              },
+              {
+                "name": "$where",
+                "value": "",
+                "type": "query",
+                "description": "SoQL where clause for filtering rows"
+              },
+              {
+                "name": "$order",
+                "value": "",
+                "type": "query",
+                "description": "SoQL order by clause"
+              }
+            ]
+          },
+          "docs": "Weekly TFF COT report covering futures-only positions for financial futures."
+        },
+        {
+          "info": {
+            "name": "Traders in Financial Futures (Combined)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://publicreporting.cftc.gov/resource/yw9f-hn96.json",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+              },
+              {
+                "name": "$offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of rows to skip for paging"
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "SoQL select clause specifying which columns to return"
+              },
+              {
+                "name": "$where",
+                "value": "",
+                "type": "query",
+                "description": "SoQL where clause for filtering rows"
+              },
+              {
+                "name": "$order",
+                "value": "",
+                "type": "query",
+                "description": "SoQL order by clause"
+              }
+            ]
+          },
+          "docs": "Weekly TFF COT report covering combined futures and options positions for financial futures."
+        },
+        {
+          "info": {
+            "name": "Supplemental Commodity Index Trader Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://publicreporting.cftc.gov/resource/4zgm-a668.json",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+              },
+              {
+                "name": "$offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of rows to skip for paging"
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "SoQL select clause specifying which columns to return"
+              },
+              {
+                "name": "$where",
+                "value": "",
+                "type": "query",
+                "description": "SoQL where clause for filtering rows"
+              },
+              {
+                "name": "$order",
+                "value": "",
+                "type": "query",
+                "description": "SoQL order by clause"
+              }
+            ]
+          },
+          "docs": "Weekly supplemental COT report focused on Commodity Index Trader positions in selected agricultural markets."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
