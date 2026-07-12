@@ -106,6 +106,8 @@ apis:
       - Track bank participation in major futures markets
       - Research banks' net exposure across commodity sectors
 common:
+  - type: DomainSecurity
+    url: security/commodity-futures-trading-commission-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/commodity-futures-trading-commission
   - type: Website
