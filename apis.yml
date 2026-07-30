@@ -7,7 +7,19 @@ description: >-
   markets. The CFTC publishes the weekly Commitments of Traders (COT) report and other public data through a Socrata
   Open Data API at publicreporting.cftc.gov, providing programmatic access to Legacy, Disaggregated, Traders in
   Financial Futures, and Supplemental Commodity Index Trader datasets, as well as swap data and large trader reports.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/commodity-futures-trading-commission.png
 tags:
   - CFTC
   - Commitments of Traders
@@ -21,90 +33,147 @@ created: '2024-12-03'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: commodity-futures-trading-commission:cftc-cot-api
-    name: CFTC Commitments of Traders SODA API
-    description: >-
-      Programmatic access to the CFTC Commitments of Traders weekly reports via the Socrata Open Data API hosted at
-      publicreporting.cftc.gov. Datasets cover Legacy, Disaggregated, Traders in Financial Futures, and Supplemental
-      Commodity Index Trader formats for both futures-only and combined futures-and-options positions.
-    humanURL: https://publicreporting.cftc.gov/
-    baseURL: https://publicreporting.cftc.gov/resource
-    tags:
-      - COT
-      - Open Data
-      - SODA
-      - Trading
-    properties:
-      - type: Documentation
-        url: https://publicreporting.cftc.gov/
-      - type: Reference
-        url: https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
-      - type: Reference
-        url: https://dev.socrata.com/foundry/publicreporting.cftc.gov
-      - type: OpenAPI
-        url: openapi/cftc-cot-openapi.yml
-      - type: JSONSchema
-        url: json-schema/cftc-cot-schema.json
-    x-features:
-      - SoQL query language for filtering ($where, $select, $order)
-      - Page through up to 50,000 rows per request
-      - JSON, CSV, XML, RDF, RSS output formats
-      - No authentication token required for typical use
-      - Weekly Tuesday data updates
-    x-useCases:
-      - Build positioning dashboards for futures markets
-      - Compute net commercial vs non-commercial open interest
-      - Track managed money positioning in Disaggregated reports
-      - Integrate COT data into quantitative trading models
-  - aid: commodity-futures-trading-commission:cftc-swap-data-repositories
-    name: CFTC Swap Data Repositories
-    description: >-
-      The CFTC oversees Swap Data Repositories (SDRs) that collect and maintain swap transaction records as required by
-      the Dodd-Frank Act. SDRs publish certain real-time public data and the CFTC publishes aggregate weekly swap
-      reports.
-    humanURL: https://www.cftc.gov/MarketReports/SwapsReports/index.htm
-    baseURL: https://www.cftc.gov
-    tags:
-      - Dodd-Frank
-      - Swaps
-      - SDR
-      - Reporting
-    properties:
-      - type: Documentation
-        url: https://www.cftc.gov/MarketReports/SwapsReports/index.htm
-      - type: Reference
-        url: https://www.cftc.gov/IndustryOversight/DataRepositories/index.htm
-    x-features:
-      - Weekly Swaps Report aggregates dealer activity
-      - Real-time public dissemination of swap transactions via SDRs
-      - Coverage of credit, interest rate, FX, and commodity asset classes
-    x-useCases:
-      - Monitor weekly swap dealer activity
-      - Research aggregate gross notional outstanding by asset class
-      - Track post-Dodd-Frank market structure changes
-  - aid: commodity-futures-trading-commission:cftc-large-trader-reporting
-    name: CFTC Bank Participation and Large Trader Reports
-    description: >-
-      The CFTC publishes monthly Bank Participation reports and other aggregate large trader reports that complement the
-      weekly COT data. These reports are released as PDFs and HTML tables on cftc.gov.
-    humanURL: https://www.cftc.gov/MarketReports/BankParticipationReports/index.htm
-    baseURL: https://www.cftc.gov
-    tags:
-      - Bank Participation
-      - Large Trader
-      - Reporting
-    properties:
-      - type: Documentation
-        url: https://www.cftc.gov/MarketReports/BankParticipationReports/index.htm
-      - type: Reference
-        url: https://www.cftc.gov/MarketReports/index.htm
-    x-features:
-      - Monthly bank participation in futures markets
-      - Industry-level breakdowns of large trader positions
-      - Released as HTML and PDF; not currently exposed via SODA
-    x-useCases:
-      - Track bank participation in major futures markets
-      - Research banks' net exposure across commodity sectors
+- aid: commodity-futures-trading-commission:cftc-swap-data-repositories
+  name: CFTC Swap Data Repositories
+  description: >-
+    The CFTC oversees Swap Data Repositories (SDRs) that collect and maintain swap transaction records
+    as required by the Dodd-Frank Act. SDRs publish certain real-time public data and the CFTC publishes
+    aggregate weekly swap reports.
+  humanURL: https://www.cftc.gov/MarketReports/SwapsReports/index.htm
+  baseURL: https://www.cftc.gov
+  tags:
+  - Dodd-Frank
+  - Swaps
+  - SDR
+  - Reporting
+  properties:
+  - type: Documentation
+    url: https://www.cftc.gov/MarketReports/SwapsReports/index.htm
+  - type: Reference
+    url: https://www.cftc.gov/IndustryOversight/DataRepositories/index.htm
+  x-features:
+  - Weekly Swaps Report aggregates dealer activity
+  - Real-time public dissemination of swap transactions via SDRs
+  - Coverage of credit, interest rate, FX, and commodity asset classes
+  x-useCases:
+  - Monitor weekly swap dealer activity
+  - Research aggregate gross notional outstanding by asset class
+  - Track post-Dodd-Frank market structure changes
+- aid: commodity-futures-trading-commission:cftc-large-trader-reporting
+  name: CFTC Bank Participation and Large Trader Reports
+  description: >-
+    The CFTC publishes monthly Bank Participation reports and other aggregate large trader reports that
+    complement the weekly COT data. These reports are released as PDFs and HTML tables on cftc.gov.
+  humanURL: https://www.cftc.gov/MarketReports/BankParticipationReports/index.htm
+  baseURL: https://www.cftc.gov
+  tags:
+  - Bank Participation
+  - Large Trader
+  - Reporting
+  properties:
+  - type: Documentation
+    url: https://www.cftc.gov/MarketReports/BankParticipationReports/index.htm
+  - type: Reference
+    url: https://www.cftc.gov/MarketReports/index.htm
+  x-features:
+  - Monthly bank participation in futures markets
+  - Industry-level breakdowns of large trader positions
+  - Released as HTML and PDF; not currently exposed via SODA
+  x-useCases:
+  - Track bank participation in major futures markets
+  - Research banks' net exposure across commodity sectors
+- aid: commodity-futures-trading-commission:commodity-futures-trading-commission-cot-api
+  name: Commodity Futures Trading Commission COT API
+  description: Commitments of Traders datasets
+  humanURL: https://publicreporting.cftc.gov/
+  baseURL: https://publicreporting.cftc.gov/resource
+  tags:
+  - COT
+  properties:
+  - type: OpenAPI
+    url: openapi/commodity-futures-trading-commission-cot-api-openapi.yml
+  - type: Documentation
+    url: https://publicreporting.cftc.gov/
+  - type: Reference
+    url: https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
+  - type: Reference
+    url: https://dev.socrata.com/foundry/publicreporting.cftc.gov
+  - type: JSONSchema
+    url: json-schema/cftc-cot-schema.json
+- aid: >-
+    commodity-futures-trading-commission:commodity-futures-trading-commission-disaggregated-api
+  name: Commodity Futures Trading Commission Disaggregated API
+  description: Disaggregated COT report format
+  humanURL: https://publicreporting.cftc.gov/
+  baseURL: https://publicreporting.cftc.gov/resource
+  tags:
+  - Disaggregated
+  properties:
+  - type: OpenAPI
+    url: openapi/commodity-futures-trading-commission-disaggregated-api-openapi.yml
+  - type: Documentation
+    url: https://publicreporting.cftc.gov/
+  - type: Reference
+    url: https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
+  - type: Reference
+    url: https://dev.socrata.com/foundry/publicreporting.cftc.gov
+  - type: JSONSchema
+    url: json-schema/cftc-cot-schema.json
+- aid: commodity-futures-trading-commission:commodity-futures-trading-commission-legacy-api
+  name: Commodity Futures Trading Commission Legacy API
+  description: Legacy COT report format
+  humanURL: https://publicreporting.cftc.gov/
+  baseURL: https://publicreporting.cftc.gov/resource
+  tags:
+  - Legacy
+  properties:
+  - type: OpenAPI
+    url: openapi/commodity-futures-trading-commission-legacy-api-openapi.yml
+  - type: Documentation
+    url: https://publicreporting.cftc.gov/
+  - type: Reference
+    url: https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
+  - type: Reference
+    url: https://dev.socrata.com/foundry/publicreporting.cftc.gov
+  - type: JSONSchema
+    url: json-schema/cftc-cot-schema.json
+- aid: >-
+    commodity-futures-trading-commission:commodity-futures-trading-commission-supplemental-api
+  name: Commodity Futures Trading Commission Supplemental API
+  description: Supplemental Commodity Index Trader format
+  humanURL: https://publicreporting.cftc.gov/
+  baseURL: https://publicreporting.cftc.gov/resource
+  tags:
+  - Supplemental
+  properties:
+  - type: OpenAPI
+    url: openapi/commodity-futures-trading-commission-supplemental-api-openapi.yml
+  - type: Documentation
+    url: https://publicreporting.cftc.gov/
+  - type: Reference
+    url: https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
+  - type: Reference
+    url: https://dev.socrata.com/foundry/publicreporting.cftc.gov
+  - type: JSONSchema
+    url: json-schema/cftc-cot-schema.json
+- aid: commodity-futures-trading-commission:commodity-futures-trading-commission-tff-api
+  name: Commodity Futures Trading Commission TFF API
+  description: Traders in Financial Futures format
+  humanURL: https://publicreporting.cftc.gov/
+  baseURL: https://publicreporting.cftc.gov/resource
+  tags:
+  - TFF
+  properties:
+  - type: OpenAPI
+    url: openapi/commodity-futures-trading-commission-tff-api-openapi.yml
+  - type: Documentation
+    url: https://publicreporting.cftc.gov/
+  - type: Reference
+    url: https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm
+  - type: Reference
+    url: https://dev.socrata.com/foundry/publicreporting.cftc.gov
+  - type: JSONSchema
+    url: json-schema/cftc-cot-schema.json
 common:
   - type: AgenticAccess
     url: agentic-access/commodity-futures-trading-commission-agentic-access.yml
