@@ -1,0 +1,22 @@
+{
+  "provider": "commodity-futures-trading-commission",
+  "sources": [
+    "commodity-futures-trading-commission-cot-api-openapi.yml",
+    "commodity-futures-trading-commission-disaggregated-api-openapi.yml",
+    "commodity-futures-trading-commission-legacy-api-openapi.yml",
+    "commodity-futures-trading-commission-supplemental-api-openapi.yml",
+    "commodity-futures-trading-commission-tff-api-openapi.yml"
+  ],
+  "outputs": [
+    "commodity-futures-trading-commission-cot-api-openapi.yml",
+    "commodity-futures-trading-commission-disaggregated-api-openapi.yml",
+    "commodity-futures-trading-commission-legacy-api-openapi.yml",
+    "commodity-futures-trading-commission-supplemental-api-openapi.yml",
+    "commodity-futures-trading-commission-tff-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
