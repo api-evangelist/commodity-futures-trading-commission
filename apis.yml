@@ -191,8 +191,6 @@ common:
     url: vocabulary/cftc-cot-vocabulary.yml
   - type: SpectralRules
     url: rules/cftc-cot-rules.yml
-  - type: Capability
-    url: capabilities/query-commitments-of-traders.yml
   - type: Documentation
     url: https://publicreporting.cftc.gov/
   - type: Reference
