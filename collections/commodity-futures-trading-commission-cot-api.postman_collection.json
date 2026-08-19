@@ -1,0 +1,886 @@
+{
+  "item": [
+    {
+      "id": "5148038a-f881-4af8-be81-85af3dca4de2",
+      "name": "COT",
+      "description": {
+        "content": "Commitments of Traders datasets",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bf148880-e087-47d4-9107-bd8641b3a4ef",
+          "name": "Legacy Commitments of Traders (Futures Only)",
+          "request": {
+            "name": "Legacy Commitments of Traders (Futures Only)",
+            "description": {
+              "content": "Weekly Legacy COT report covering futures-only positions for reportable contracts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "6dca-aqww.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00afc004-22d4-4bc2-b4c7-2644b40a3b91",
+              "name": "An array of Legacy futures-only COT records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "6dca-aqww.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"2018-09-22\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_market_code\": \"string\",\n    \"cftc_region_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"noncomm_positions_long_all\": \"string\",\n    \"noncomm_positions_short_all\": \"string\",\n    \"comm_positions_long_all\": \"string\",\n    \"comm_positions_short_all\": \"string\",\n    \"nonrept_positions_long_all\": \"string\",\n    \"nonrept_positions_short_all\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1988-08-04\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_market_code\": \"string\",\n    \"cftc_region_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"noncomm_positions_long_all\": \"string\",\n    \"noncomm_positions_short_all\": \"string\",\n    \"comm_positions_long_all\": \"string\",\n    \"comm_positions_short_all\": \"string\",\n    \"nonrept_positions_long_all\": \"string\",\n    \"nonrept_positions_short_all\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af2c74db-737f-4297-98fb-ca74a722fea3",
+          "name": "Legacy Commitments of Traders (Combined)",
+          "request": {
+            "name": "Legacy Commitments of Traders (Combined)",
+            "description": {
+              "content": "Weekly Legacy COT report covering combined futures and options positions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jun7-fc8e.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d35884e0-c9df-4864-b554-9ed13bce59dc",
+              "name": "An array of Legacy combined COT records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jun7-fc8e.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"2018-09-22\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_market_code\": \"string\",\n    \"cftc_region_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"noncomm_positions_long_all\": \"string\",\n    \"noncomm_positions_short_all\": \"string\",\n    \"comm_positions_long_all\": \"string\",\n    \"comm_positions_short_all\": \"string\",\n    \"nonrept_positions_long_all\": \"string\",\n    \"nonrept_positions_short_all\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1988-08-04\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_market_code\": \"string\",\n    \"cftc_region_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"noncomm_positions_long_all\": \"string\",\n    \"noncomm_positions_short_all\": \"string\",\n    \"comm_positions_long_all\": \"string\",\n    \"comm_positions_short_all\": \"string\",\n    \"nonrept_positions_long_all\": \"string\",\n    \"nonrept_positions_short_all\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f43a3001-7eba-4840-b0a4-d2834b240598",
+          "name": "Disaggregated Commitments of Traders (Futures Only)",
+          "request": {
+            "name": "Disaggregated Commitments of Traders (Futures Only)",
+            "description": {
+              "content": "Weekly Disaggregated COT report for futures-only positions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "72hh-3qpy.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca3487b8-423b-4fe8-8a67-fdb0e0d0efaa",
+              "name": "An array of Disaggregated futures-only COT records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "72hh-3qpy.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1982-08-14\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"prod_merc_positions_long_all\": \"string\",\n    \"prod_merc_positions_short_all\": \"string\",\n    \"swap_positions_long_all\": \"string\",\n    \"swap__positions_short_all\": \"string\",\n    \"m_money_positions_long_all\": \"string\",\n    \"m_money_positions_short_all\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1998-05-11\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"prod_merc_positions_long_all\": \"string\",\n    \"prod_merc_positions_short_all\": \"string\",\n    \"swap_positions_long_all\": \"string\",\n    \"swap__positions_short_all\": \"string\",\n    \"m_money_positions_long_all\": \"string\",\n    \"m_money_positions_short_all\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aba07005-295e-4f60-aebf-d0c961997917",
+          "name": "Disaggregated Commitments of Traders (Combined)",
+          "request": {
+            "name": "Disaggregated Commitments of Traders (Combined)",
+            "description": {
+              "content": "Weekly Disaggregated COT report for combined futures and options positions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "kh3c-gbw2.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "24c36a99-9bc8-4c41-a362-8526aeafe534",
+              "name": "An array of Disaggregated combined COT records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "kh3c-gbw2.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1982-08-14\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"prod_merc_positions_long_all\": \"string\",\n    \"prod_merc_positions_short_all\": \"string\",\n    \"swap_positions_long_all\": \"string\",\n    \"swap__positions_short_all\": \"string\",\n    \"m_money_positions_long_all\": \"string\",\n    \"m_money_positions_short_all\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1998-05-11\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"prod_merc_positions_long_all\": \"string\",\n    \"prod_merc_positions_short_all\": \"string\",\n    \"swap_positions_long_all\": \"string\",\n    \"swap__positions_short_all\": \"string\",\n    \"m_money_positions_long_all\": \"string\",\n    \"m_money_positions_short_all\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "194c6fe3-dcf9-45e3-a389-24f0ae95f313",
+          "name": "Traders in Financial Futures (Futures Only)",
+          "request": {
+            "name": "Traders in Financial Futures (Futures Only)",
+            "description": {
+              "content": "Weekly TFF COT report covering futures-only positions for financial futures.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gpe5-46if.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79b17080-46a2-4b58-813d-e14e3feec498",
+              "name": "An array of TFF futures-only COT records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gpe5-46if.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1953-06-19\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"dealer_positions_long_all\": \"string\",\n    \"dealer_positions_short_all\": \"string\",\n    \"asset_mgr_positions_long\": \"string\",\n    \"asset_mgr_positions_short\": \"string\",\n    \"lev_money_positions_long\": \"string\",\n    \"lev_money_positions_short\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"2021-09-21\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"dealer_positions_long_all\": \"string\",\n    \"dealer_positions_short_all\": \"string\",\n    \"asset_mgr_positions_long\": \"string\",\n    \"asset_mgr_positions_short\": \"string\",\n    \"lev_money_positions_long\": \"string\",\n    \"lev_money_positions_short\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "daf038de-91c1-4610-a941-750a6f242308",
+          "name": "Traders in Financial Futures (Combined)",
+          "request": {
+            "name": "Traders in Financial Futures (Combined)",
+            "description": {
+              "content": "Weekly TFF COT report covering combined futures and options positions for financial futures.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "yw9f-hn96.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c4ee755-e863-4248-bdd0-c3fb7b3e7d6a",
+              "name": "An array of TFF combined COT records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "yw9f-hn96.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1953-06-19\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"dealer_positions_long_all\": \"string\",\n    \"dealer_positions_short_all\": \"string\",\n    \"asset_mgr_positions_long\": \"string\",\n    \"asset_mgr_positions_short\": \"string\",\n    \"lev_money_positions_long\": \"string\",\n    \"lev_money_positions_short\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"2021-09-21\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"dealer_positions_long_all\": \"string\",\n    \"dealer_positions_short_all\": \"string\",\n    \"asset_mgr_positions_long\": \"string\",\n    \"asset_mgr_positions_short\": \"string\",\n    \"lev_money_positions_long\": \"string\",\n    \"lev_money_positions_short\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77fc1d02-7f3f-4ce2-85bb-d3f194c41383",
+          "name": "Supplemental Commodity Index Trader Report",
+          "request": {
+            "name": "Supplemental Commodity Index Trader Report",
+            "description": {
+              "content": "Weekly supplemental COT report focused on Commodity Index Trader positions in selected agricultural markets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "4zgm-a668.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13a83691-b989-420b-ad40-07795bcd46e0",
+              "name": "An array of Supplemental Commodity Index Trader records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4zgm-a668.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1955-01-19\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"comm_positions_long_all\": \"string\",\n    \"comm_positions_short_all\": \"string\",\n    \"noncomm_positions_long_all\": \"string\",\n    \"noncomm_positions_short_all\": \"string\",\n    \"cit_positions_long_all\": \"string\",\n    \"cit_positions_short_all\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1985-11-23\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"comm_positions_long_all\": \"string\",\n    \"comm_positions_short_all\": \"string\",\n    \"noncomm_positions_long_all\": \"string\",\n    \"noncomm_positions_short_all\": \"string\",\n    \"cit_positions_long_all\": \"string\",\n    \"cit_positions_short_all\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://publicreporting.cftc.gov/resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "afc08ee5-136f-4a90-8820-ed811bc946d7",
+    "name": "CFTC Commitments of Traders () SODA COT API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the public Socrata Open Data API (SODA) endpoints that the U.S. Commodity Futures Trading Commission exposes through its Public Reporting Environment at publicreporting.cftc.gov. These datasets publish weekly Commitments of Traders (COT) positions for futures and futures plus options, in Legacy, Disaggregated, and Traders in Financial Futures (TFF) report formats.\n\nContact Support:\n Name: CFTC Public Reporting",
+      "type": "text/plain"
+    }
+  }
+}

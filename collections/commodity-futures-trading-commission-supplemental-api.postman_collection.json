@@ -1,0 +1,154 @@
+{
+  "item": [
+    {
+      "id": "ea99b116-5e09-410f-9fb9-de7ed3c487e6",
+      "name": "Supplemental",
+      "description": {
+        "content": "Supplemental Commodity Index Trader format",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "87900e51-edab-4b41-ae18-3da3a2094bee",
+          "name": "Supplemental Commodity Index Trader Report",
+          "request": {
+            "name": "Supplemental Commodity Index Trader Report",
+            "description": {
+              "content": "Weekly supplemental COT report focused on Commodity Index Trader positions in selected agricultural markets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "4zgm-a668.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffbb12a3-98b7-4df9-95ea-9969f353aa3f",
+              "name": "An array of Supplemental Commodity Index Trader records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4zgm-a668.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1975-01-27\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"comm_positions_long_all\": \"string\",\n    \"comm_positions_short_all\": \"string\",\n    \"noncomm_positions_long_all\": \"string\",\n    \"noncomm_positions_short_all\": \"string\",\n    \"cit_positions_long_all\": \"string\",\n    \"cit_positions_short_all\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"2002-02-14\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"comm_positions_long_all\": \"string\",\n    \"comm_positions_short_all\": \"string\",\n    \"noncomm_positions_long_all\": \"string\",\n    \"noncomm_positions_short_all\": \"string\",\n    \"cit_positions_long_all\": \"string\",\n    \"cit_positions_short_all\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://publicreporting.cftc.gov/resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "81efb051-ef22-4bd7-8639-c4e8cf232c98",
+    "name": "CFTC Commitments of Traders () SODA COT Supplemental API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the public Socrata Open Data API (SODA) endpoints that the U.S. Commodity Futures Trading Commission exposes through its Public Reporting Environment at publicreporting.cftc.gov. These datasets publish weekly Commitments of Traders (COT) positions for futures and futures plus options, in Legacy, Disaggregated, and Traders in Financial Futures (TFF) report formats.\n\nContact Support:\n Name: CFTC Public Reporting",
+      "type": "text/plain"
+    }
+  }
+}

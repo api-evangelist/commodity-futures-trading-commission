@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFTC Commitments of Traders () SODA COT TFF API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TFF",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Traders in Financial Futures (Futures Only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+              },
+              {
+                "name": "$offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of rows to skip for paging"
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "SoQL select clause specifying which columns to return"
+              },
+              {
+                "name": "$where",
+                "value": "",
+                "type": "query",
+                "description": "SoQL where clause for filtering rows"
+              },
+              {
+                "name": "$order",
+                "value": "",
+                "type": "query",
+                "description": "SoQL order by clause"
+              }
+            ]
+          },
+          "docs": "Weekly TFF COT report covering futures-only positions for financial futures."
+        },
+        {
+          "info": {
+            "name": "Traders in Financial Futures (Combined)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://publicreporting.cftc.gov/resource/yw9f-hn96.json",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+              },
+              {
+                "name": "$offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of rows to skip for paging"
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "SoQL select clause specifying which columns to return"
+              },
+              {
+                "name": "$where",
+                "value": "",
+                "type": "query",
+                "description": "SoQL where clause for filtering rows"
+              },
+              {
+                "name": "$order",
+                "value": "",
+                "type": "query",
+                "description": "SoQL order by clause"
+              }
+            ]
+          },
+          "docs": "Weekly TFF COT report covering combined futures and options positions for financial futures."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

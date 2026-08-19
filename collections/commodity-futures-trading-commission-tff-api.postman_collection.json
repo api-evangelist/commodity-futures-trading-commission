@@ -1,0 +1,276 @@
+{
+  "item": [
+    {
+      "id": "b62d4c09-479d-4fbc-877c-427f55cb5139",
+      "name": "TFF",
+      "description": {
+        "content": "Traders in Financial Futures format",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d6d64e36-7e05-4e29-bc1c-6bb128426fc0",
+          "name": "Traders in Financial Futures (Futures Only)",
+          "request": {
+            "name": "Traders in Financial Futures (Futures Only)",
+            "description": {
+              "content": "Weekly TFF COT report covering futures-only positions for financial futures.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gpe5-46if.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5da2f54f-2301-439e-aad7-231e0bfde9bc",
+              "name": "An array of TFF futures-only COT records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gpe5-46if.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1994-07-19\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"dealer_positions_long_all\": \"string\",\n    \"dealer_positions_short_all\": \"string\",\n    \"asset_mgr_positions_long\": \"string\",\n    \"asset_mgr_positions_short\": \"string\",\n    \"lev_money_positions_long\": \"string\",\n    \"lev_money_positions_short\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"2008-05-10\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"dealer_positions_long_all\": \"string\",\n    \"dealer_positions_short_all\": \"string\",\n    \"asset_mgr_positions_long\": \"string\",\n    \"asset_mgr_positions_short\": \"string\",\n    \"lev_money_positions_long\": \"string\",\n    \"lev_money_positions_short\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b901ace-d321-463d-8c98-f639a2979b97",
+          "name": "Traders in Financial Futures (Combined)",
+          "request": {
+            "name": "Traders in Financial Futures (Combined)",
+            "description": {
+              "content": "Weekly TFF COT report covering combined futures and options positions for financial futures.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "yw9f-hn96.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "1000",
+                  "description": "Maximum number of rows to return (Socrata default 1000, max 50000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "<integer>",
+                  "description": "Number of rows to skip for paging"
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "SoQL select clause specifying which columns to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "$where",
+                  "value": "<string>",
+                  "description": "SoQL where clause for filtering rows"
+                },
+                {
+                  "disabled": false,
+                  "key": "$order",
+                  "value": "<string>",
+                  "description": "SoQL order by clause"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8e15b134-9b67-4a93-a0f4-89f5c2caeeb2",
+              "name": "An array of TFF combined COT records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "yw9f-hn96.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"1994-07-19\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"dealer_positions_long_all\": \"string\",\n    \"dealer_positions_short_all\": \"string\",\n    \"asset_mgr_positions_long\": \"string\",\n    \"asset_mgr_positions_short\": \"string\",\n    \"lev_money_positions_long\": \"string\",\n    \"lev_money_positions_short\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  },\n  {\n    \"market_and_exchange_names\": \"string\",\n    \"report_date_as_yyyy_mm_dd\": \"2008-05-10\",\n    \"cftc_contract_market_code\": \"string\",\n    \"cftc_commodity_code\": \"string\",\n    \"open_interest_all\": \"string\",\n    \"dealer_positions_long_all\": \"string\",\n    \"dealer_positions_short_all\": \"string\",\n    \"asset_mgr_positions_long\": \"string\",\n    \"asset_mgr_positions_short\": \"string\",\n    \"lev_money_positions_long\": \"string\",\n    \"lev_money_positions_short\": \"string\",\n    \"other_rept_positions_long\": \"string\",\n    \"other_rept_positions_short\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://publicreporting.cftc.gov/resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f3addf29-704e-4ef5-bd7d-d4062a63d180",
+    "name": "CFTC Commitments of Traders () SODA COT TFF API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the public Socrata Open Data API (SODA) endpoints that the U.S. Commodity Futures Trading Commission exposes through its Public Reporting Environment at publicreporting.cftc.gov. These datasets publish weekly Commitments of Traders (COT) positions for futures and futures plus options, in Legacy, Disaggregated, and Traders in Financial Futures (TFF) report formats.\n\nContact Support:\n Name: CFTC Public Reporting",
+      "type": "text/plain"
+    }
+  }
+}
