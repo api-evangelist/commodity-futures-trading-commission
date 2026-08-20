@@ -23,6 +23,15 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/commodity-
 tags:
   - CFTC
   - Commitments of Traders
+  - Federal-Government
+  - Financial
+  - Futures
+  - Open Data
+  - SODA
+  - Trading
+tags_raw:
+  - CFTC
+  - Commitments of Traders
   - Federal Government
   - Financial
   - Futures
