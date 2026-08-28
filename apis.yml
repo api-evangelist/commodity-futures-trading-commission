@@ -7,6 +7,17 @@ description: >-
   markets. The CFTC publishes the weekly Commitments of Traders (COT) report and other public data through a Socrata
   Open Data API at publicreporting.cftc.gov, providing programmatic access to Legacy, Disaggregated, Traders in
   Financial Futures, and Supplemental Commodity Index Trader datasets, as well as swap data and large trader reports.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
