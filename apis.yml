@@ -63,6 +63,11 @@ apis:
   baseURL: https://www.cftc.gov
   tags:
   - Dodd-Frank
+  - Swap
+  - SDR
+  - Reporting
+  tags_raw:
+  - Dodd-Frank
   - Swaps
   - SDR
   - Reporting
