@@ -1,22 +1,21 @@
 {
   "provider": "commodity-futures-trading-commission",
   "sources": [
-    "commodity-futures-trading-commission-cot-api-openapi.yml",
-    "commodity-futures-trading-commission-disaggregated-api-openapi.yml",
-    "commodity-futures-trading-commission-legacy-api-openapi.yml",
-    "commodity-futures-trading-commission-supplemental-api-openapi.yml",
-    "commodity-futures-trading-commission-tff-api-openapi.yml"
+    "_original/cftc-cot-openapi.yml"
   ],
   "outputs": [
-    "commodity-futures-trading-commission-cot-api-openapi.yml",
-    "commodity-futures-trading-commission-disaggregated-api-openapi.yml",
-    "commodity-futures-trading-commission-legacy-api-openapi.yml",
-    "commodity-futures-trading-commission-supplemental-api-openapi.yml",
-    "commodity-futures-trading-commission-tff-api-openapi.yml"
+    "commodity-futures-trading-commission-cot-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "cftc-cot-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "cftc-cot-openapi.yml: multi-axis tagging (5 tags, 1 first tags, 2.00x duplication over 7 operations) \u2014 split on first tag, 7 operations narrowed",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "commodity-futures-trading-commission-cot-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

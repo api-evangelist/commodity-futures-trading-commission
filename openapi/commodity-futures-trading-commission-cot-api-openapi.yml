@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: CFTC Commitments of Traders () SODA COT API
   description: OpenAPI description of the public Socrata Open Data API (SODA) endpoints that the U.S. Commodity Futures Trading Commission exposes through its Public Reporting Environment at publicreporting.cftc.gov. These datasets publish weekly Commitments of Traders (COT) positions for futures and futures plus options, in Legacy, Disaggregated, and Traders in Financial Futures (TFF) report formats.
@@ -168,42 +168,33 @@ paths:
                 items:
                   $ref: '#/components/schemas/CotSupplementalRow'
 components:
-  parameters:
-    SocrataOffset:
-      name: $offset
-      in: query
-      description: Number of rows to skip for paging
-      schema:
-        type: integer
-        minimum: 0
-    SocrataSelect:
-      name: $select
-      in: query
-      description: SoQL select clause specifying which columns to return
-      schema:
-        type: string
-    SocrataWhere:
-      name: $where
-      in: query
-      description: SoQL where clause for filtering rows
-      schema:
-        type: string
-    SocrataLimit:
-      name: $limit
-      in: query
-      description: Maximum number of rows to return (Socrata default 1000, max 50000)
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 50000
-        default: 1000
-    SocrataOrder:
-      name: $order
-      in: query
-      description: SoQL order by clause
-      schema:
-        type: string
   schemas:
+    CotSupplementalRow:
+      type: object
+      properties:
+        market_and_exchange_names:
+          type: string
+        report_date_as_yyyy_mm_dd:
+          type: string
+          format: date
+        cftc_contract_market_code:
+          type: string
+        cftc_commodity_code:
+          type: string
+        open_interest_all:
+          type: string
+        comm_positions_long_all:
+          type: string
+        comm_positions_short_all:
+          type: string
+        noncomm_positions_long_all:
+          type: string
+        noncomm_positions_short_all:
+          type: string
+        cit_positions_long_all:
+          type: string
+        cit_positions_short_all:
+          type: string
     CotTffRow:
       type: object
       properties:
@@ -233,32 +224,6 @@ components:
         other_rept_positions_long:
           type: string
         other_rept_positions_short:
-          type: string
-    CotSupplementalRow:
-      type: object
-      properties:
-        market_and_exchange_names:
-          type: string
-        report_date_as_yyyy_mm_dd:
-          type: string
-          format: date
-        cftc_contract_market_code:
-          type: string
-        cftc_commodity_code:
-          type: string
-        open_interest_all:
-          type: string
-        comm_positions_long_all:
-          type: string
-        comm_positions_short_all:
-          type: string
-        noncomm_positions_long_all:
-          type: string
-        noncomm_positions_short_all:
-          type: string
-        cit_positions_long_all:
-          type: string
-        cit_positions_short_all:
           type: string
     CotLegacyRow:
       type: object
@@ -320,3 +285,38 @@ components:
           type: string
         other_rept_positions_short:
           type: string
+  parameters:
+    SocrataLimit:
+      name: $limit
+      in: query
+      description: Maximum number of rows to return (Socrata default 1000, max 50000)
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50000
+        default: 1000
+    SocrataWhere:
+      name: $where
+      in: query
+      description: SoQL where clause for filtering rows
+      schema:
+        type: string
+    SocrataOffset:
+      name: $offset
+      in: query
+      description: Number of rows to skip for paging
+      schema:
+        type: integer
+        minimum: 0
+    SocrataSelect:
+      name: $select
+      in: query
+      description: SoQL select clause specifying which columns to return
+      schema:
+        type: string
+    SocrataOrder:
+      name: $order
+      in: query
+      description: SoQL order by clause
+      schema:
+        type: string
