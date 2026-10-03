@@ -169,6 +169,18 @@ paths:
                   $ref: '#/components/schemas/CotSupplementalRow'
 components:
   parameters:
+    SocrataWhere:
+      name: $where
+      in: query
+      description: SoQL where clause for filtering rows
+      schema:
+        type: string
+    SocrataOrder:
+      name: $order
+      in: query
+      description: SoQL order by clause
+      schema:
+        type: string
     SocrataOffset:
       name: $offset
       in: query
@@ -191,19 +203,37 @@ components:
       description: SoQL select clause specifying which columns to return
       schema:
         type: string
-    SocrataWhere:
-      name: $where
-      in: query
-      description: SoQL where clause for filtering rows
-      schema:
-        type: string
-    SocrataOrder:
-      name: $order
-      in: query
-      description: SoQL order by clause
-      schema:
-        type: string
   schemas:
+    CotDisaggregatedRow:
+      type: object
+      properties:
+        market_and_exchange_names:
+          type: string
+        report_date_as_yyyy_mm_dd:
+          type: string
+          format: date
+        cftc_contract_market_code:
+          type: string
+        cftc_commodity_code:
+          type: string
+        open_interest_all:
+          type: string
+        prod_merc_positions_long_all:
+          type: string
+        prod_merc_positions_short_all:
+          type: string
+        swap_positions_long_all:
+          type: string
+        swap__positions_short_all:
+          type: string
+        m_money_positions_long_all:
+          type: string
+        m_money_positions_short_all:
+          type: string
+        other_rept_positions_long:
+          type: string
+        other_rept_positions_short:
+          type: string
     CotTffRow:
       type: object
       properties:
@@ -289,34 +319,4 @@ components:
         cit_positions_long_all:
           type: string
         cit_positions_short_all:
-          type: string
-    CotDisaggregatedRow:
-      type: object
-      properties:
-        market_and_exchange_names:
-          type: string
-        report_date_as_yyyy_mm_dd:
-          type: string
-          format: date
-        cftc_contract_market_code:
-          type: string
-        cftc_commodity_code:
-          type: string
-        open_interest_all:
-          type: string
-        prod_merc_positions_long_all:
-          type: string
-        prod_merc_positions_short_all:
-          type: string
-        swap_positions_long_all:
-          type: string
-        swap__positions_short_all:
-          type: string
-        m_money_positions_long_all:
-          type: string
-        m_money_positions_short_all:
-          type: string
-        other_rept_positions_long:
-          type: string
-        other_rept_positions_short:
           type: string
