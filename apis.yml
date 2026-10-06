@@ -51,7 +51,7 @@ tags_raw:
   - Trading
   - Federal-Government
 created: '2024-12-03'
-modified: '2026-05-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: commodity-futures-trading-commission:cftc-swap-data-repositories
@@ -125,6 +125,8 @@ apis:
   - type: JSONSchema
     url: json-schema/cftc-cot-schema.json
 common:
+  - url: https://www.cftc.gov/rss.xml
+    type: BlogRSS
   - type: AgenticAccess
     url: agentic-access/commodity-futures-trading-commission-agentic-access.yml
   - type: DomainSecurity
