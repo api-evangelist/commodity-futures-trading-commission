@@ -125,6 +125,12 @@ apis:
   - type: JSONSchema
     url: json-schema/cftc-cot-schema.json
 common:
+  - type: Plans
+    url: plans/commodity-futures-trading-commission-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/commodity-futures-trading-commission-rate-limits.yml
+  - type: FinOps
+    url: finops/commodity-futures-trading-commission-finops.yml
   - url: https://www.cftc.gov/rss.xml
     type: BlogRSS
   - type: AgenticAccess
