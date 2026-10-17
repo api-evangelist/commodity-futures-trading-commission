@@ -168,8 +168,43 @@ paths:
                 items:
                   $ref: '#/components/schemas/CotSupplementalRow'
 components:
+  parameters:
+    SocrataLimit:
+      name: $limit
+      in: query
+      description: Maximum number of rows to return (Socrata default 1000, max 50000)
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50000
+        default: 1000
+    SocrataOrder:
+      name: $order
+      in: query
+      description: SoQL order by clause
+      schema:
+        type: string
+    SocrataSelect:
+      name: $select
+      in: query
+      description: SoQL select clause specifying which columns to return
+      schema:
+        type: string
+    SocrataOffset:
+      name: $offset
+      in: query
+      description: Number of rows to skip for paging
+      schema:
+        type: integer
+        minimum: 0
+    SocrataWhere:
+      name: $where
+      in: query
+      description: SoQL where clause for filtering rows
+      schema:
+        type: string
   schemas:
-    CotSupplementalRow:
+    CotTffRow:
       type: object
       properties:
         market_and_exchange_names:
@@ -183,17 +218,21 @@ components:
           type: string
         open_interest_all:
           type: string
-        comm_positions_long_all:
+        dealer_positions_long_all:
           type: string
-        comm_positions_short_all:
+        dealer_positions_short_all:
           type: string
-        noncomm_positions_long_all:
+        asset_mgr_positions_long:
           type: string
-        noncomm_positions_short_all:
+        asset_mgr_positions_short:
           type: string
-        cit_positions_long_all:
+        lev_money_positions_long:
           type: string
-        cit_positions_short_all:
+        lev_money_positions_short:
+          type: string
+        other_rept_positions_long:
+          type: string
+        other_rept_positions_short:
           type: string
     CotLegacyRow:
       type: object
@@ -255,7 +294,7 @@ components:
           type: string
         other_rept_positions_short:
           type: string
-    CotTffRow:
+    CotSupplementalRow:
       type: object
       properties:
         market_and_exchange_names:
@@ -269,54 +308,15 @@ components:
           type: string
         open_interest_all:
           type: string
-        dealer_positions_long_all:
+        comm_positions_long_all:
           type: string
-        dealer_positions_short_all:
+        comm_positions_short_all:
           type: string
-        asset_mgr_positions_long:
+        noncomm_positions_long_all:
           type: string
-        asset_mgr_positions_short:
+        noncomm_positions_short_all:
           type: string
-        lev_money_positions_long:
+        cit_positions_long_all:
           type: string
-        lev_money_positions_short:
+        cit_positions_short_all:
           type: string
-        other_rept_positions_long:
-          type: string
-        other_rept_positions_short:
-          type: string
-  parameters:
-    SocrataWhere:
-      name: $where
-      in: query
-      description: SoQL where clause for filtering rows
-      schema:
-        type: string
-    SocrataOffset:
-      name: $offset
-      in: query
-      description: Number of rows to skip for paging
-      schema:
-        type: integer
-        minimum: 0
-    SocrataOrder:
-      name: $order
-      in: query
-      description: SoQL order by clause
-      schema:
-        type: string
-    SocrataLimit:
-      name: $limit
-      in: query
-      description: Maximum number of rows to return (Socrata default 1000, max 50000)
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 50000
-        default: 1000
-    SocrataSelect:
-      name: $select
-      in: query
-      description: SoQL select clause specifying which columns to return
-      schema:
-        type: string
